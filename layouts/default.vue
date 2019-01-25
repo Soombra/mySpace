@@ -1,5 +1,11 @@
 <template>
-  <div>
+  <div class="body">
+    <ul class="nav nav-tabs fixed-nav">
+      <li role="presentation"><nuxt-link to="/">home</nuxt-link></li>
+      <li role="presentation"><nuxt-link to="/page1">page1</nuxt-link></li>
+      <li role="presentation"><nuxt-link to="/page2">page2</nuxt-link></li>
+      <li role="presentation"><nuxt-link to="/page3">page3</nuxt-link></li>
+    </ul>
     <nuxt />
   </div>
 </template>
@@ -22,6 +28,21 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+.body{
+  padding-top: 50px;
+}
+.fixed-nav{
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  top: 0;
+  left: 0;
+  border-bottom: 0.5px solid #c4c4c4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
 }
 
 .button--green {
