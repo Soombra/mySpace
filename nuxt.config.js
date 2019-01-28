@@ -1,5 +1,5 @@
 const pkg = require('./package')
-
+const webpack = require('webpack')
 
 module.exports = {
   mode: 'universal',
@@ -17,10 +17,8 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
-    script: [
-        {src: "https://code.jquery.com/jquery-3.3.1.slim.min.js"},
-        {src:"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"}
-      ]
+    script: [{src: 'https://code.jquery.com/jquery-3.3.1.slim.min.js'},{src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js'}
+    ]
   },
 
   /*
@@ -52,11 +50,17 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vendor:[],
     /*
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-        
+        plugins: [
+        new webpack.ProvidePlugin({
+          '$': 'jquery',
+          jQuery: "jquery"
+        })
+      ]
     }
   }
 }
