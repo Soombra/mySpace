@@ -59,7 +59,6 @@
   html {
     font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 16px;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -76,6 +75,7 @@
   }
   .main{
     max-width: 980px;
+    padding: 20px;
     margin: 0 auto;
   }
 
@@ -84,9 +84,6 @@
   *:after {
     box-sizing: border-box;
     margin: 0;
-  }
-  .body {
-    padding-top: 50px;
   }
 
   .fixed-nav {

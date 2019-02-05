@@ -1,5 +1,5 @@
-const pkg = require('./package')
-const webpack = require('webpack')
+const pkg = require ('./package')
+const webpack = require ('webpack')
 
 module.exports = {
   mode: 'universal',
@@ -10,35 +10,37 @@ module.exports = {
   head: {
     title: pkg.name,
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      {charset: 'utf-8'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {hid: 'description', name: 'description', content: pkg.description}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      {href: "https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"}
     ],
-    script: [{src: 'https://code.jquery.com/jquery-3.3.1.slim.min.js'},{src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js'}
+    script: [
+      {src: 'https://code.jquery.com/jquery-3.3.1.slim.min.js'},
+      {src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js'},
+      {src: '/js/flex.js'}
     ]
   },
 
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: {color: '#fff'},
 
   /*
   ** Global CSS
   */
   css: [
-    'bootstrap/dist/css/bootstrap.min.css',
     '@/assets/css/base.scss'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-  ],
+  plugins: [],
 
   /*
   ** Nuxt.js modules
@@ -52,13 +54,17 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor:[],
+    postcss: [
+      require ('postcss-px2rem') ({
+        remUnit: 16
+      })
+    ],
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
-        plugins: [
-        new webpack.ProvidePlugin({
+    extend (config, ctx) {
+      plugins: [
+        new webpack.ProvidePlugin ({
           '$': 'jquery',
           jQuery: "jquery"
         })
