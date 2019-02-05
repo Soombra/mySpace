@@ -23,6 +23,10 @@ async function start() {
   }
 
   // Give nuxt middleware to express
+  app.get('*', function(req, res, next) {
+    console.log('收到请求', req.originalUrl)
+    next()
+  })
   app.use(nuxt.render)
 
   // Listen the server
