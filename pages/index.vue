@@ -27,10 +27,18 @@
 
 <script>
   import Logo from '~/components/Logo.vue'
+  import axios from 'axios'
 
   export default {
     components: {
       Logo
+    },
+    asyncData () {
+      axios.get('/api_test/test').then(({data}) => {
+        console.log('请求成功', data)
+      }).catch((err) => {
+        console.log('请求失败', err)
+      })
     }
   }
 </script>

@@ -23,9 +23,12 @@ async function start() {
   }
 
   // Give nuxt middleware to express
-  app.get('*', function(req, res, next) {
+  app.get('/api_test/test', function(req, res, next) {
     console.log('收到请求', req.originalUrl)
-    next()
+    res.send({
+      title: '12312',
+      text: '阿斯顿能看见撒贷记卡是你的空间啊蛇年大吉卡萨诺科技大厦你的空间上看见你的卡上'
+    })
   })
   app.use(nuxt.render)
 
