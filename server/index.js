@@ -2,6 +2,7 @@ const express = require('express')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
 const app = express()
+const controllers = require('./controllers')
 
 // Import and Set Nuxt.js options
 let config = require('../nuxt.config.js')
@@ -22,14 +23,8 @@ async function start() {
     await builder.build()
   }
 
+  controllers(app)
   // Give nuxt middleware to express
-  app.get('/api_test/test', function(req, res, next) {
-    console.log('收到请求', req.originalUrl)
-    res.send({
-      title: '12312',
-      text: '阿斯顿能看见撒贷记卡是你的空间啊蛇年大吉卡萨诺科技大厦你的空间上看见你的卡上'
-    })
-  })
   app.use(nuxt.render)
 
   // Listen the server

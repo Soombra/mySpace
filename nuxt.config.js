@@ -47,16 +47,8 @@ module.exports = {
   */
   modules: [
     // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt',
-    '@nuxtjs/axios'
+    'bootstrap-vue/nuxt'
   ],
-  axios: {
-    proxy: true
-    // See https://github.com/nuxt-community/axios-module#options
-  },
-  proxy: {
-    '^/api_test': 'http://baidu.com'
-  },
   /*
   ** Build configuration
   */

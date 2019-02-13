@@ -1,27 +1,6 @@
 <template>
   <section class="page-main">
-    <p>
-      鞍山觉得那时的那老师都能快乐哪里啊都能健康啦是的啦是哪里的阿斯科利的爱上
-    </p>
-    <p>
-      鞍山觉得那时的那老师都能快乐哪里啊都能健康啦是的啦是哪里的阿斯科利的爱上
-    </p>
-    <p>
-      鞍山觉得那时的那老师都能快乐哪里啊都能健康啦是的啦是哪里的阿斯科利的爱上
-    </p>
-    <p>
-      鞍山觉得那时的那老师都能快乐哪里啊都能健康啦是的啦是哪里的阿斯科利的爱上
-    </p>
-    <p>
-      鞍山觉得那时的那老师都能快乐哪里啊都能健康啦是的啦是哪里的阿斯科利的爱上
-    </p>
-    <p>
-      鞍山觉得那时的那老师都能快乐哪里啊都能健康啦是的啦是哪里的阿斯科利的爱上
-    </p>
-    <p>
-      鞍山觉得那时的那老师都能快乐哪里啊都能健康啦是的啦是哪里的阿斯科利的爱上
-    </p>
-
+    <p v-for = '(item, index) in pageData' :key="index">{{item.text}}</p>
   </section>
 </template>
 
@@ -33,12 +12,23 @@
     components: {
       Logo
     },
+    data () {
+      return {
+        pageData: []
+      }
+    },
     asyncData () {
-      request.get('/api_test/test').then(({data}) => {
-        console.log('请求成功', data)
+      return request.get('/api_test/test').then(({data}) => {
+        console.log('请求成功')
+        return {
+          pageData: data
+        }
       }).catch((err) => {
         console.log('请求失败', err)
       })
+    },
+    mounted () {
+      console.log('mounted,打印数据', this.pageData)
     }
   }
 </script>
