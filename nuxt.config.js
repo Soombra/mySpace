@@ -15,8 +15,7 @@ module.exports = {
       {hid: 'description', name: 'description', content: pkg.description}
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-      {href: "https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"}
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
     ],
     script: [
       {src: 'https://code.jquery.com/jquery-3.3.1.slim.min.js'},
@@ -34,7 +33,8 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '@/assets/css/base.scss'
+    '@/assets/css/base.scss',
+    'bootstrap/dist/css/bootstrap.css'
   ],
 
   /*
