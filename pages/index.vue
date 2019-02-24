@@ -18,7 +18,7 @@
       }
     },
     asyncData () {
-      return request.get('/api_test/test').then(({data}) => {
+      return request.get('/front_api/test').then(({data}) => {
         console.log('请求成功')
         return {
           pageData: data

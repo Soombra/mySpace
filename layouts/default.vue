@@ -12,15 +12,28 @@
             <nuxt-link class="nav-link" :to="item.url">{{item.text}}</nuxt-link>
           </li>
         </ul>
+        <div class="nav-item" v-if="isLogin">你好，{{userInfo.nickname}}</div>
+        <div class="btn btn-primary" @click="handleLogin" v-else>登录</div>
       </div>
     </nav>
     <div class="main">
       <nuxt/>
     </div>
+    <div class="clock">
+      <clock></clock>
+    </div>
   </div>
 </template>
 <script>
+  import clock from '~~/components/clock'
+  import {APPID} from '~~/config'
+  import store from '~~/store'
+  import { mapState } from 'vuex'
   export default {
+    store,
+    components: {
+      clock
+    },
     data () {
       return {
         activeIndex: 0,
@@ -42,10 +55,17 @@
           'front-end': 1,
           'travel': 2,
           'my-life': 3
-        }
+        },
       }
     },
+    computed: {
+      ...mapState(['isLogin', 'userInfo'])
+    },
     methods: {
+      handleLogin () {
+        let loginUrl = `https://open.weixin.qq.com/connect/qrconnect?appid=${APPID}&redirect_uri=${encodeURI(location)}&response_type=code&scope=SCOPE&state=STATE#wechat_redirect`
+        location.href = loginUrl
+      },
       handleClick (index) {
         this.activeIndex = index
       }
@@ -78,7 +98,11 @@
     padding: 20px;
     margin: 0 auto;
   }
-
+  .clock{
+    position: absolute;
+    right: 10px;
+    top: 40px;
+  }
   *,
   *:before,
   *:after {
