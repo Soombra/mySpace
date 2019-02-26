@@ -27,10 +27,8 @@
 <script>
   import clock from '~~/components/clock'
   import {APPID} from '~~/config'
-  import store from '~~/store'
   import { mapState } from 'vuex'
   export default {
-    store,
     components: {
       clock
     },
