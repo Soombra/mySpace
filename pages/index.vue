@@ -5,13 +5,9 @@
 </template>
 
 <script>
-  import Logo from '~/components/Logo.vue'
   import request from '~/request'
 
   export default {
-    components: {
-      Logo
-    },
     data () {
       return {
         pageData: []

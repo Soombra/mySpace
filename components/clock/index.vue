@@ -59,7 +59,6 @@
         ctx.clearRect (0, 0, width, height)
         this.drawClock (ctx)
         this.drawColorfulBalls (ctx)
-        console.log (colorfulBalls.length)
       },
       updateData () {
         const {width, height, loss, g} = config

@@ -1,11 +1,30 @@
 const mongoose = require ('mongoose')
-const indexModel = require ('../models')
+const {indexModel, articleModel} = require ('../models')
 
 const controllers = {
-  controller1 (req, res, next) {
-    indexModel.find (function (err, result) {
+  test (req, res) {
+    indexModel.find ((err, result) => {
       if (err) return console.error (err);
       res.send (result)
+    })
+  },
+  queryArticles (req, res) {
+    articleModel.find((err, articles) => {
+      if (err) {
+        console.log(err)
+        return
+      }
+      res.send(articles)
+    })
+  },
+  articleDetails (req, res) {
+    let _id = req.params.id
+    articleModel.findOne({_id}, (err, article) => {
+      if(err){
+        console.log(err)
+        return
+      }
+      res.send(article)
     })
   }
 }
