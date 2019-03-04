@@ -19,6 +19,7 @@
     "express": "^4.16.4",
     "graceful-fs": "^4.1.15",
     "jquery": "^3.3.1",
+    "jsonwebtoken": "^8.5.0",
     "mongoose": "^5.4.13",
     "nuxt": "^2.3.4",
     "postcss-px2rem": "^0.3.0"
