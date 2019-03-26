@@ -5,11 +5,11 @@
   </div>
 </template>
 <script>
-  import {frontEnd} from '~/apis'
+  import {travel} from '~/apis'
 
   export default {
     asyncData (ctx) {
-      return frontEnd.getArticle(ctx.route.params.id).then(({data}) => {
+      return travel.getArticle(ctx.route.params.id).then(({data}) => {
         return {article: data}
       })
     },

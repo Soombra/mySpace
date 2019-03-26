@@ -46,7 +46,7 @@
           url: '/travel'
         },{
           text: '生活随笔',
-          url: '/my-life'
+          url: '/essay'
         }],
         urlDict: {
           'index': 0,

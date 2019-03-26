@@ -5,27 +5,14 @@
 </template>
 
 <script>
-  import request from '~/request'
-
   export default {
     data () {
       return {
         pageData: []
       }
     },
-    asyncData () {
-      return request.get('/front_api/test').then(({data}) => {
-        console.log('请求成功')
-        return {
-          pageData: data
-        }
-      }).catch((err) => {
-        console.log('请求失败', err)
-      })
-    },
-    mounted () {
-      console.log('mounted,打印数据', this.pageData)
-    }
+    asyncData () {},
+    mounted () {}
   }
 </script>
 

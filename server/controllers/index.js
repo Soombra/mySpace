@@ -1,15 +1,9 @@
 const mongoose = require ('mongoose')
-const {indexModel, articleModel} = require ('../models')
+const {frontArticleModel, travelArticleModel, essayArticleModel} = require ('../models')
 
 const controllers = {
-  test (req, res) {
-    indexModel.find ((err, result) => {
-      if (err) return console.error (err);
-      res.send (result)
-    })
-  },
-  queryArticles (req, res) {
-    articleModel.find((err, articles) => {
+  queryFrontArticles (req, res) {
+    frontArticleModel.find((err, articles) => {
       if (err) {
         console.log(err)
         return
@@ -17,9 +11,47 @@ const controllers = {
       res.send(articles)
     })
   },
-  articleDetails (req, res) {
+  frontArticleDetails (req, res) {
     let _id = req.params.id
-    articleModel.findOne({_id}, (err, article) => {
+    frontArticleModel.findOne({_id}, (err, article) => {
+      if(err){
+        console.log(err)
+        return
+      }
+      res.send(article)
+    })
+  },
+  queryTravelArticles (req, res) {
+    travelArticleModel.find((err, articles) => {
+      if (err) {
+        console.log(err)
+        return
+      }
+      res.send(articles)
+    })
+  },
+  travelArticleDetails (req, res) {
+    let _id = req.params.id
+    travelArticleModel.findOne({_id}, (err, article) => {
+      if(err){
+        console.log(err)
+        return
+      }
+      res.send(article)
+    })
+  },
+  queryEssayArticles (req, res) {
+    essayArticleModel.find((err, articles) => {
+      if (err) {
+        console.log(err)
+        return
+      }
+      res.send(articles)
+    })
+  },
+  essayArticleDetails (req, res) {
+    let _id = req.params.id
+    essayArticleModel.findOne({_id}, (err, article) => {
       if(err){
         console.log(err)
         return

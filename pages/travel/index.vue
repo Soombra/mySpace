@@ -1,3 +1,27 @@
 <template>
-    <div>个人游记</div>
+  <div>
+    <h2>游记列表</h2>
+    <div v-for="(item, index) in articles" class="" :key="index">
+      <nuxt-link class="nuxt-link" :to="`/travel/articles/${item._id}`">{{item.title}}</nuxt-link>
+    </div>
+  </div>
 </template>
+<script>
+  import {travel} from '~/apis'
+
+  export default {
+    asyncData () {
+      return travel.queryArticles().then(({data}) => {
+        if (data) {
+          console.log(data)
+          return {articles: data}
+        }
+      })
+    },
+    data () {
+      return {
+        articles: []
+      }
+    }
+  }
+</script>

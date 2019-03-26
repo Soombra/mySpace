@@ -1,9 +1,11 @@
 const mongoose = require ('mongoose')
-const {indexSchema , articleSchema} = require('../schemas')
-const indexModel = mongoose.model('index', indexSchema)
-const articleModel = mongoose.model('article', articleSchema)
+const {articleSchema} = require('../schemas')
+const frontArticleModel = mongoose.model('frontArticle', articleSchema)
+const travelArticleModel = mongoose.model('travelArticle', articleSchema)
+const essayArticleModel = mongoose.model('essayArticle', articleSchema)
 
 module.exports = {
-  indexModel,
-  articleModel
+  frontArticleModel,
+  travelArticleModel,
+  essayArticleModel
 }
