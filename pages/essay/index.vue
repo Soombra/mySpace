@@ -1,8 +1,10 @@
 <template>
   <div>
     <h2>随笔列表</h2>
-    <div v-for="(item, index) in articles" class="" :key="index">
-      <nuxt-link class="nuxt-link" :to="`/essay/articles/${item._id}`">{{item.title}}</nuxt-link>
+    <div class="lists">
+      <div v-for="(item, index) in articles" class="list-item" :key="index">
+        <nuxt-link class="nuxt-link" :to="`/essay/articles/${item._id}`">{{item.title}}</nuxt-link>
+      </div>
     </div>
   </div>
 </template>
