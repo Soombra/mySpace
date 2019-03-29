@@ -3,7 +3,7 @@ const {frontArticleModel, travelArticleModel, essayArticleModel} = require ('../
 
 const controllers = {
   queryFrontArticles (req, res) {
-    frontArticleModel.find((err, articles) => {
+    frontArticleModel.find({status: 'published'}, 'title abstract date_published image', (err, articles) => {
       if (err) {
         console.log(err)
         return

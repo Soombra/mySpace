@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand">康哥的地盘</a>
+      <nuxt-link to="/" class="navbar-brand">康哥的小空间</nuxt-link>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -19,7 +19,7 @@
     <div class="main">
       <nuxt/>
     </div>
-    <div class="clock">
+    <div class="clock" v-if="documentWidth > 1430">
       <clock></clock>
     </div>
   </div>
@@ -35,24 +35,21 @@
     data () {
       return {
         activeIndex: 0,
+        documentWidth: 1500,
         tabs: [{
-          text: '首页',
-          url: '/'
-        },{
           text: '前端',
           url: '/front-end'
         },{
           text: '游记',
           url: '/travel'
         },{
-          text: '生活随笔',
+          text: '生活',
           url: '/essay'
         }],
         urlDict: {
-          'index': 0,
-          'front-end': 1,
-          'travel': 2,
-          'my-life': 3
+          'front-end': 0,
+          'travel': 1,
+          'my-life': 2
         },
       }
     },
@@ -70,6 +67,10 @@
     },
     mounted () {
       this.activeIndex = this.urlDict[$nuxt.$route.name]
+      this.documentWidth = document.body.clientWidth
+      window.addEventListener('resize', (e) => {
+         this.documentWidth = document.body.clientWidth
+      })
     }
   }
 </script>
@@ -84,6 +85,15 @@
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
   }
+  .navbar{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-bottom: 1px solid #eee;
+    z-index: 100;
+    background-color: #fff;
+  }
   .navbar-brand{
     margin-right: 20px;
   }
@@ -93,12 +103,12 @@
   }
   .main{
     max-width: 980px;
-    padding: 20px;
+    padding: 70px 20px 50px;
     margin: 0 auto;
   }
   .clock{
     position: absolute;
-    right: 10px;
+    right: 0px;
     top: 40px;
   }
   *,

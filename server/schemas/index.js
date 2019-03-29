@@ -1,8 +1,5 @@
 const mongoose = require ('mongoose')
-const articleSchema = mongoose.Schema({
-  title: String,
-  content: String
-})
+const articleSchema = mongoose.Schema({})
 
 module.exports = {
   articleSchema
