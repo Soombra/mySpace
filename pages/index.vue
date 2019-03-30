@@ -43,10 +43,16 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    padding: 20px;
     .index-menu-item{
       text-decoration: none;
       font-size: 16px;
-      color: #fff;
+      color: #bbb;
+      width: 100%;
+      background-color: rgba(255,255,255, .1);
+      border-radius: 5px;
+      text-align: center;
+      line-height: 36px;
     }
   }
 </style>

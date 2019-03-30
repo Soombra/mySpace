@@ -22,7 +22,7 @@ const controllers = {
     })
   },
   queryTravelArticles (req, res) {
-    travelArticleModel.find((err, articles) => {
+    travelArticleModel.find({status: 'published'}, 'title abstract date_published image', (err, articles) => {
       if (err) {
         console.log(err)
         return
@@ -41,7 +41,7 @@ const controllers = {
     })
   },
   queryEssayArticles (req, res) {
-    essayArticleModel.find((err, articles) => {
+    essayArticleModel.find({status: 'published'}, 'title abstract date_published image', (err, articles) => {
       if (err) {
         console.log(err)
         return

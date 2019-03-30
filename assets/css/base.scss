@@ -39,7 +39,7 @@
         border-bottom: 1px dotted #ccc;
       }
       .list-item-abstract{
-        font-size: 14px;
+        font-size: 16px;
         color: #666;
         padding-top: 10px;
         display:-webkit-box;
@@ -73,14 +73,16 @@
     }
   }
   .article-title{
+    color: #555;
     margin-bottom: 40px;
     margin-top: 20px;
     text-align: center;
   }
   .article-content{
-    color: #333;
+    color: #555;
     p{
       text-indent: 34px;
+      font-size: 18px;
       img{
         display: block;
         max-width: 100%;
