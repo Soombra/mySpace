@@ -36,6 +36,7 @@
     second2: (7 * (2 * r + gap) + numGap) * 5 + (4 * (2 * r + gap) + numGap) * 2
   }
   const colorfulBalls = []
+  let timer = 0
 
   export default {
     data () {
@@ -49,7 +50,7 @@
         canvas.height = height
         const context = canvas.getContext ('2d')
         context.strokeRect (0, 0, width, height)
-        setInterval (() => {
+        timer = setInterval (() => {
           this.updateData ()
           this.draw (context)
         }, 50)
@@ -161,6 +162,9 @@
     },
     mounted () {
       this.canvasBegin ()
+    },
+    beforeDestroy () {
+      clearInterval(timer)
     }
   }
 </script>

@@ -1,28 +1,15 @@
 <template>
-  <div class="bg">
-    <canvas id="c"></canvas>
-    <div class="cover">
-      <nuxt/>
-    </div>
+  <div class="home">
+    <nuxt/>
   </div>
 </template>
 <script>
-  import snow from '~/static/js/snow2'
+
   export default {
     data () {
       return {}
     },
-    head(){
-      return {
-        script: [
-          {src: '/js/snow1.js'}
-        ]
-      }
-    },
-    methods: {},
-    mounted () {
-      snow()
-    }
+    methods: {}
   }
 </script>
 <style lang="scss" scoped>
@@ -35,21 +22,6 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
-  }
-  #c{
-    position: absolute;
-  }
-  .bg{
-    width: 100vw;
-    height: 100vh;
-    background-image: url('../static/img/bg.jpeg');
-    background-size: cover;
-    background-position: center;
-    .cover{
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.1);
-    }
   }
   *,
   *:before,
