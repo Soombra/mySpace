@@ -1,7 +1,7 @@
 <template>
   <div class="index">
     <div id="index-bg" :class="bgSlide && 'slide-up'">
-      <canvas id="c"  @click="handleSlide"></canvas>
+      <canvas id="c"></canvas>
       <!--<div class="cover"></div>-->
       <div :class="['index-menu', bgSlide ? 'fade-out' : 'fade-in']">
         文章列表
