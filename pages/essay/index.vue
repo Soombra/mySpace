@@ -24,6 +24,14 @@
         }
       })
     },
+    head () {
+      return {
+        title: '生活随笔-康哥的个人空间',
+        meta: [
+          {hid: 'keywords', name: 'keywords', content: '生活随笔,读书'}
+        ]
+      }
+    },
     data () {
       return {
         articles: [],

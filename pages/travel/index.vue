@@ -24,6 +24,14 @@
         }
       })
     },
+    head () {
+      return {
+        title: '游记分享-康哥的个人空间',
+        meta: [
+          {hid: 'keywords', name: 'keywords', content: '户外,川藏线,骑行,旅游'}
+        ]
+      }
+    },
     data () {
       return {
         articles: [],

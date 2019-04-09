@@ -12,8 +12,8 @@
             <nuxt-link class="nav-link" :to="item.url">{{item.text}}</nuxt-link>
           </li>
         </ul>
-        <div class="nav-item" v-if="isLogin">你好，{{userInfo.nickname}}</div>
-        <div class="btn btn-primary" @click="handleLogin" v-else>登录</div>
+        <!--<div class="nav-item" v-if="isLogin">你好，{{userInfo.nickname}}</div>-->
+        <!--<div class="btn btn-primary" @click="handleLogin" v-else>登录</div>-->
       </div>
     </nav>
     <div class="main">

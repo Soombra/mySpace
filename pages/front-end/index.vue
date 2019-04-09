@@ -24,6 +24,14 @@
         }
       })
     },
+    head () {
+      return {
+        title: '前端技术分享-康哥的个人空间',
+        meta: [
+          {hid: 'keywords', name: 'keywords', content: '前端,编程,技术分享'}
+        ]
+      }
+    },
     data () {
       return {
         articles: [],

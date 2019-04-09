@@ -52,6 +52,14 @@
         bgSlide: false
       }
     },
+    head () {
+      return {
+        title: '康哥的个人空间',
+        meta: [
+          {hid: 'keywords', name: 'keywords', content: '技术分享,户外游记,生活随笔'}
+        ]
+      }
+    },
     methods: {
       handleSlide () {
         if (!this.showContent) {
