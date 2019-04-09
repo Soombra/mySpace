@@ -114,7 +114,7 @@
     height: 100.1vh;
     background-image: url('../static/img/bg.jpeg');
     background-size: cover;
-    background-position: center;
+    background-position: 0 0;
     transition: all 0.4s ease-out 0s;
     &.slide-up {
       transform: translateY(-20vh);
@@ -217,6 +217,7 @@
     .content-body {
       background-color: #fff;
       .content-main{
+        padding: 20px;
         font-size: 20px;
         line-height: 32px;
         max-width: 980px;

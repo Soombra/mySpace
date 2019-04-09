@@ -13,6 +13,15 @@
         return {article: data}
       })
     },
+    head () {
+      return {
+        title: this.article.title + '-康哥的个人空间',
+        meta: [
+          {hid: 'keywords', name: 'keywords', content: '生活随笔,读书'},
+          {hid: 'description', name: 'description', content: this.article.title + ',' + this.article.abstract}
+        ]
+      }
+    },
     data () {
       return {
         article: {}
