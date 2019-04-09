@@ -12,7 +12,7 @@ config.dev = !(process.env.NODE_ENV === 'production')
 
 async function start() {
   // start mongoose
-  mongoose.connect(url, {useNewUrlParser:true})
+  mongoose.connect(url, {useNewUrlParser: true})
   let connection = mongoose.connection
   connection.once('open', function () {
     console.log('数据库链接成功')
