@@ -18,10 +18,17 @@
       <div class="content-head-cover"></div>
       <div class="content-body">
         <div class="content-main">
-          从加强和改善党对全面深化改革统筹领导到抓好中央和地方机构改革；从激发制度活力激活基层经验激励干部作为到加强领导科学统筹狠抓落实；从把新时代改革开放继续推向前进到对标重要领域、关键环节推进落实重大改革举措。习近平总书记的重要讲话既有纵横捭阖的全局谋划，又有明确而具体的抓手和落点，引领全面深化改革进入到了一个新的阶段。
-          从加强和改善党对全面深化改革统筹领导到抓好中央和地方机构改革；从激发制度活力激活基层经验激励干部作为到加强领导科学统筹狠抓落实；从把新时代改革开放继续推向前进到对标重要领域、关键环节推进落实重大改革举措。习近平总书记的重要讲话既有纵横捭阖的全局谋划，又有明确而具体的抓手和落点，引领全面深化改革进入到了一个新的阶段。
-          从加强和改善党对全面深化改革统筹领导到抓好中央和地方机构改革；从激发制度活力激活基层经验激励干部作为到加强领导科学统筹狠抓落实；从把新时代改革开放继续推向前进到对标重要领域、关键环节推进落实重大改革举措。习近平总书记的重要讲话既有纵横捭阖的全局谋划，又有明确而具体的抓手和落点，引领全面深化改革进入到了一个新的阶段。
-          从加强和改善党对全面深化改革统筹领导到抓好中央和地方机构改革；从激发制度活力激活基层经验激励干部作为到加强领导科学统筹狠抓落实；从把新时代改革开放继续推向前进到对标重要领域、关键环节推进落实重大改革举措。习近平总书记的重要讲话既有纵横捭阖的全局谋划，又有明确而具体的抓手和落点，引领全面深化改革进入到了一个新的阶段。
+          <h2>关于我</h2>
+          <div class="my-info">
+            <img class="my-info-avatar" src="http://medias.wuerkang.com/738b9d8df7258e2a37fe8145c167895.jpg" alt="">
+            <div class="my-info-text">
+              哈喽，我是这个网站的主人，一名90后北漂。下过建筑工地，做过房地产成本，现在是一名奋进在前端路上的开发者。 <br/><br/>
+          我对自己的评价是一个“有冒险精神的宅男”，喜欢独处的时光，同时也偏爱户外和运动。周末会和朋友一起去京郊爬爬山，也曾经骑行走完了川藏线，环过青海湖。对我来说，人生不止一个标签，体验新鲜事物永远是我最大的爱好。 <br/><br/>
+          这里是我总结分享技术和记录生活点滴的地方，希望能通过文字认识到更多的朋友。如果想和我探讨问题，欢迎在下方留言！ <br/><br/>
+          <span class="tip">ps.如果你也玩守望先锋，我们可以成为朋友哦！</span>
+            </div>
+          </div>
+          <h2>留下你的足迹</h2>
         </div>
       </div>
     </div>
@@ -120,7 +127,7 @@
   #index-bg {
     width: 100vw;
     height: 100.1vh;
-    background-image: url('../static/img/bg.jpeg');
+    background-image: url('http://medias.wuerkang.com/bg.jpeg');
     background-size: cover;
     background-position: 0 0;
     transition: all 0.4s ease-out 0s;
@@ -214,7 +221,6 @@
   }
   .index-content {
     width: 100vw;
-    height: 2000px;
     position: absolute;
     top: 100vh;
     z-index: 150;
@@ -224,12 +230,16 @@
     }
     .content-body {
       background-color: #fff;
+      overflow:hidden;
       .content-main{
-        padding: 20px;
-        font-size: 20px;
-        line-height: 32px;
         max-width: 980px;
-        margin: 0 auto;
+          margin: 0 auto;
+          padding: 0 20px;
+          h2{
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+          }
       }
     }
   }
@@ -292,4 +302,34 @@
   .fade-out {
     animation: fade-out 0.4s ease-out 0s forwards;
   }
+  .my-info{
+          display:flex;
+          margin-bottom:60px;
+          .my-info-avatar{
+            width:300px;
+            height:400px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .my-info-text{
+          flex-grow: 1;
+          margin-left: 20px;
+          font-size: 20px;
+          line-height: 32px;
+          .tip{
+            font-size:16px;
+          }
+        } 
+        }
+
+@media screen and (max-width: 768px){
+  .my-info{
+    flex-direction: column;
+    .my-info-avatar{
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+  }
+}
 </style>
