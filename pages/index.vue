@@ -230,6 +230,9 @@
       line-height: 36px;
       position: relative;
       padding-left: 20px;
+      &:hover{
+        background-color: rgba(255, 255, 255, 0.2);
+      }
 
       &::after {
         width: 10px;
