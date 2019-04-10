@@ -23,12 +23,25 @@
             <img class="my-info-avatar" src="http://medias.wuerkang.com/738b9d8df7258e2a37fe8145c167895.jpg" alt="">
             <div class="my-info-text">
               哈喽，我是这个网站的主人，一名90后北漂。下过建筑工地，做过房地产成本，现在是一名奋进在前端路上的开发者。 <br/><br/>
-          我对自己的评价是一个“有冒险精神的宅男”，喜欢独处的时光，同时也偏爱户外和运动。周末会和朋友一起去京郊爬爬山，也曾经骑行走完了川藏线，环过青海湖。对我来说，人生不止一个标签，体验新鲜事物永远是我最大的爱好。 <br/><br/>
-          这里是我总结分享技术和记录生活点滴的地方，希望能通过文字认识到更多的朋友。如果想和我探讨问题，欢迎在下方留言！ <br/><br/>
-          <span class="tip">ps.如果你也玩守望先锋，我们可以成为朋友哦！</span>
+              我对自己的评价是一个“有冒险精神的宅男”，喜欢独处的时光，同时也偏爱户外和运动。周末会和朋友一起去京郊爬爬山，也曾经骑行走完了川藏线，环过青海湖。对我来说，人生不止一个标签，体验新鲜事物永远是我最大的爱好。
+              <br/><br/>
+              这里是我总结分享技术和记录生活点滴的地方，希望能通过文字认识到更多的朋友。如果想和我探讨问题，欢迎通过下列方式联系我。 <br/><br/>
+              <span class="tip">ps.如果你也玩守望先锋，我们可以成为朋友哦！</span>
             </div>
           </div>
-          <h2>留下你的足迹</h2>
+          <h2>联系我</h2>
+          <div class="contact">
+            <div class="contact-icons">
+              <div class="icon-mail" @click="contactType = 'mail'"></div>
+              <div class="icon-wechat" @click="contactType = 'wechat'"></div>
+            </div>
+            <div class="contact-content">
+              <template v-if="contactType === 'mail'">wu772850334@163.com</template>
+              <template v-if="contactType === 'wechat'">
+                <img src="~/static/img/wechat_code.jpeg" alt="">
+              </template>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -38,6 +51,7 @@
 
 <script>
   import snow from '~/static/js/snow2'
+
   let sliding = false
   let scrollTop = 0
 
@@ -56,7 +70,8 @@
         }],
         showContent: false,
         goUp: false,
-        bgSlide: false
+        bgSlide: false,
+        contactType: 'wechat'
       }
     },
     head () {
@@ -74,7 +89,7 @@
           this.goUp = true
           this.bgSlide = true
           sliding = true
-          setTimeout (() => {
+          setTimeout(() => {
             sliding = false
           }, 400)
         } else {
@@ -82,7 +97,7 @@
           this.goUp = false
           this.bgSlide = false
           sliding = true
-          setTimeout (() => {
+          setTimeout(() => {
             this.showContent = false
             sliding = false
           }, 400)
@@ -97,13 +112,13 @@
       },
       slideInit () {
         let windowHeight = document.documentElement.clientHeight || document.body.clientHeight
-        let contentNodeHeight = document.getElementById ("index-bg").offsetHeight
+        let contentNodeHeight = document.getElementById("index-bg").offsetHeight
         document.onscroll = (e) => {
           let scrollHeight = document.documentElement.scrollTop || document.body.scrollTop
           if (scrollHeight + windowHeight >= contentNodeHeight && !this.showContent && scrollHeight - scrollTop > 0 && !sliding) {
-            this.handleSlide ()
+            this.handleSlide()
           } else if (scrollHeight + windowHeight < contentNodeHeight && this.showContent && scrollHeight - scrollTop < 0 && !sliding) {
-            this.handleSlide ()
+            this.handleSlide()
           }
           scrollTop = scrollHeight
         }
@@ -114,8 +129,8 @@
     },
     mounted () {
       console.log(this)
-      snow ()
-      this.slideInit ()
+      snow()
+      this.slideInit()
     },
     beforeDestroy () {
 
@@ -131,22 +146,26 @@
     background-size: cover;
     background-position: 0 0;
     transition: all 0.4s ease-out 0s;
+
     &.slide-up {
       transform: translateY(-20vh);
     }
+
     .cover {
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.1);
     }
+
     .about-me {
       font-size: 16px;
       position: absolute;
       top: 85%;
       left: 50%;
       transform: translateX(-50%);
-      color: rgba(255,255,255,0.8);
-      .arrow{
+      color: rgba(255, 255, 255, 0.8);
+
+      .arrow {
         width: 4px;
         height: 40px;
         background-color: #fff;
@@ -154,7 +173,8 @@
         position: relative;
         margin: 0 auto;
         animation: shinny 1.5s linear 0s infinite;
-        &::before, &::after{
+
+        &::before, &::after {
           content: '';
           position: absolute;
           width: 20px;
@@ -163,20 +183,24 @@
           background-color: #fff;
           border-radius: 2px;
         }
-        &::before{
+
+        &::before {
           right: -2px;
           transform: rotate(45deg);
         }
-        &::after{
+
+        &::after {
           left: -2px;
           transform: rotate(-45deg);
         }
       }
     }
   }
+
   #c {
     position: absolute;
   }
+
   .index-menu {
     position: fixed;
     width: 300px;
@@ -206,7 +230,8 @@
       line-height: 36px;
       position: relative;
       padding-left: 20px;
-      &::after{
+
+      &::after {
         width: 10px;
         height: 10px;
         content: '';
@@ -219,30 +244,69 @@
       }
     }
   }
+
   .index-content {
     width: 100vw;
     position: absolute;
     top: 100vh;
     z-index: 150;
+
     .content-head-cover {
       height: 70vh;
-      background-image: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
+      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
     }
+
     .content-body {
+      padding-bottom: 50px;
       background-color: #fff;
-      overflow:hidden;
-      .content-main{
+      overflow: hidden;
+
+      .content-main {
         max-width: 980px;
-          margin: 0 auto;
-          padding: 0 20px;
-          h2{
-            font-size: 30px;
-            font-weight: bold;
-            margin-bottom: 20px;
+        margin: 0 auto;
+        padding: 0 20px;
+
+        h2 {
+          font-size: 30px;
+          font-weight: bold;
+          margin-bottom: 20px;
+        }
+        .contact{
+          .contact-icons{
+            height: 80px;
+            max-width: 500px;
+            margin: 50px auto;
+            display: flex;
+            justify-content: space-around;
+            div{
+              width: 50px;
+              height: 50px;
+              background-position: center;
+              background-size: contain;
+              background-repeat: no-repeat;
+              cursor: pointer;
+            }
+            .icon-mail{
+              background-image: url("../static/img/mail.png");
+            }
+            .icon-wechat{
+              background-image: url("../static/img/wechat.png");
+            }
           }
+          .contact-content{
+            display: flex;
+            justify-content: center;
+            height: 100px;
+            img{
+              width: 100px;
+              height: 100px;
+            }
+          }
+        }
       }
     }
   }
+
   @keyframes slide-up {
     from {
       top: 100vh;
@@ -251,6 +315,7 @@
       top: 10vh;
     }
   }
+
   @keyframes slide-down {
     from {
       top: 10vh;
@@ -260,6 +325,7 @@
       top: 100vh;
     }
   }
+
   @keyframes fade-in {
     from {
       opacity: 0;
@@ -268,6 +334,7 @@
       opacity: 1;
     }
   }
+
   @keyframes fade-out {
     from {
       opacity: 1;
@@ -276,60 +343,72 @@
       opacity: 0;
     }
   }
+
   @keyframes shinny {
-    0%{
+    0% {
       opacity: 0.2;
       transform: translateY(0) scale(1);
     }
-    50%{
+    50% {
       opacity: 0.8;
       transform: translateY(5px) scaleX(1.05);
     }
-    100%{
+    100% {
       opacity: 0.2;
       transform: translateY(0) scale(1);
     }
   }
+
   .slide-up {
     animation: slide-up 0.4s ease-out 0s forwards;
   }
+
   .slide-down {
     animation: slide-down 0.4s ease-out 0s forwards;
   }
+
   .fade-in {
     animation: fade-in 0.4s ease-out 0s forwards;
   }
+
   .fade-out {
     animation: fade-out 0.4s ease-out 0s forwards;
   }
-  .my-info{
-          display:flex;
-          margin-bottom:60px;
-          .my-info-avatar{
-            width:300px;
-            height:400px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-        .my-info-text{
-          flex-grow: 1;
-          margin-left: 20px;
-          font-size: 20px;
-          line-height: 32px;
-          .tip{
-            font-size:16px;
-          }
-        } 
-        }
 
-@media screen and (max-width: 768px){
-  .my-info{
-    flex-direction: column;
-    .my-info-avatar{
-      width: 100%;
-      height: auto;
-      margin-bottom: 20px;
+  .my-info {
+    display: flex;
+    margin-bottom: 60px;
+
+    .my-info-avatar {
+      flex-shrink: 0;
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 5px;
+    }
+
+    .my-info-text {
+      flex-grow: 1;
+      margin-left: 20px;
+      font-size: 20px;
+      line-height: 32px;
+
+      .tip {
+        font-size: 16px;
+      }
     }
   }
-}
+
+  @media screen and (max-width: 768px) {
+    .my-info {
+      flex-direction: column;
+
+      .my-info-avatar {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+    }
+  }
 </style>
