@@ -11,6 +11,9 @@
       text-decoration: none;
     }
   }
+  .el-pagination.is-background .el-pager li:not(.disabled).active{
+    background-color: #29B4F0 !important;
+  }
   .list-item{
     border-radius: 5px;
     background-color: #fff;
@@ -73,6 +76,10 @@
     &:last-child{
       border: none;
     }
+  }
+  .pagination-container{
+    display: flex;
+    justify-content: center;
   }
   .article-title{
     color: #555;

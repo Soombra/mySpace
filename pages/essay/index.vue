@@ -10,6 +10,15 @@
         <img :src="item.image" alt="">
       </div>
     </div>
+    <div class="pagination-container" v-if="totalCount > 10">
+      <el-pagination
+          background
+          layout="prev, pager, next"
+          :page-size="10"
+          @current-change = 'pageChange'
+          :total="totalCount">
+      </el-pagination>
+    </div>
   </div>
 </template>
 <script>
@@ -36,6 +45,20 @@
       return {
         articles: [],
         moment,
+        page: 1,
+        totalCount: 0
+      }
+    },
+    methods: {
+      pageChange (page) {
+        this.page = page
+        this.queryArticles()
+      },
+      queryArticles () {
+        essay.queryArticles({page: this.page}).then (({data, headers}) => {
+          this.articles = data
+          this.totalCount = +headers['x-total-count']
+        })
       }
     }
   }

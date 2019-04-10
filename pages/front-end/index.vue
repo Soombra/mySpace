@@ -10,6 +10,15 @@
         <img :src="item.image" alt="">
       </div>
     </div>
+    <div class="pagination-container" v-if="totalCount > 10">
+      <el-pagination
+          background
+          layout="prev, pager, next"
+          :page-size="10"
+          @current-change = 'pageChange'
+          :total="totalCount">
+      </el-pagination>
+    </div>
   </div>
 </template>
 <script>
@@ -18,9 +27,9 @@
 
   export default {
     asyncData () {
-      return frontEnd.queryArticles ().then (({data}) => {
+      return frontEnd.queryArticles ().then (({data, headers}) => {
         if (data) {
-          return {articles: data}
+          return {articles: data, totalCount: +headers['x-total-count']}
         }
       })
     },
@@ -36,6 +45,20 @@
       return {
         articles: [],
         moment,
+        page: 1,
+        totalCount: 0
+      }
+    },
+    methods: {
+      pageChange (page) {
+        this.page = page
+        this.queryArticles()
+      },
+      queryArticles () {
+        frontEnd.queryArticles({page: this.page}).then (({data, headers}) => {
+          this.articles = data
+          this.totalCount = +headers['x-total-count']
+        })
       }
     }
   }
