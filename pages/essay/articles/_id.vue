@@ -17,7 +17,7 @@
       return {
         title: this.article.title + '-康哥的个人空间',
         meta: [
-          {hid: 'keywords', name: 'keywords', content: '生活随笔,读书'},
+          {hid: 'keywords', name: 'keywords', content: this.article.tags.join(',')},
           {hid: 'description', name: 'description', content: this.article.title + ',' + this.article.abstract}
         ]
       }
