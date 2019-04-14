@@ -53,6 +53,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    minimize: false,
     postcss: [
       require ('postcss-px2rem') ({
         remUnit: 16
