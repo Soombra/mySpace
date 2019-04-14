@@ -19,7 +19,6 @@ module.exports = {
     ],
     script: [
       {src: 'https://code.jquery.com/jquery-3.3.1.slim.min.js'},
-      {src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js'},
       {src: '/js/flex.js'},
       {src: '/js/snow1.js'}
     ]

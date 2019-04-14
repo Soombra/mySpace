@@ -1,20 +1,24 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <nuxt-link to="/" class="navbar-brand">康哥的个人空间</nuxt-link>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li v-for="(item, index) in tabs" :key="index" :class="['nav-item', index === activeIndex ? 'active': '']" @click="handleClick(index)">
-            <nuxt-link class="nav-link" :to="item.url">{{item.text}}</nuxt-link>
+    <nav class="nav">
+      <div class="nav-main">
+        <nuxt-link to="/" class="nav-brand">康哥的个人空间</nuxt-link>
+        <ul class="nav-menu">
+          <li v-for="(item, index) in tabs" :key="index"  @click="handleClick(index)">
+            <nuxt-link :to="item.url" :class="['menu-item', index === activeIndex ? 'active': '']">{{item.text}}</nuxt-link>
           </li>
         </ul>
-        <!--<div class="nav-item" v-if="isLogin">你好，{{userInfo.nickname}}</div>-->
-        <!--<div class="btn btn-primary" @click="handleLogin" v-else>登录</div>-->
+        <div class="menu-btn" @click="showDrop = !showDrop">
+          <span></span><span></span><span></span>
+        </div>
       </div>
+      <transition name="expand">
+        <ul class="nav-menu-drop" v-if="showDrop" @click="showDrop = !showDrop">
+          <li v-for="(item, index) in tabs" :key="index"  @click="handleClick(index)">
+            <nuxt-link :to="item.url" :class="['menu-item-drop', index === activeIndex ? 'active': '']">{{item.text}}</nuxt-link>
+          </li>
+        </ul>
+      </transition>
     </nav>
     <div class="main">
       <nuxt/>
@@ -51,6 +55,7 @@
           'travel': 1,
           'my-life': 2
         },
+        showDrop: false
       }
     },
     computed: {
@@ -85,25 +90,85 @@
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
   }
-  .navbar{
+  .nav{
     position: fixed;
     width: 100%;
     left: 0;
     top: 0;
-    border-bottom: 1px solid #eee;
+
     z-index: 100;
     background-color: #fff;
-  }
-  .navbar-brand{
-    margin-right: 20px;
-  }
-  .nav-item{
-    font-size: 16px;
-    padding: 0 20px;
+    font-size: 20px;
+
+    li{
+      list-style: none;
+    }
+    a{
+      text-decoration: none;
+    }
+    .nav-main{
+      width: 100%;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+    }
+    .nav-brand{
+      color: #999;
+      margin-right: 20px;
+      font-size: 22px;
+    }
+    .nav-menu{
+      display: flex;
+      flex-grow: 1;
+      .menu-item{
+        color: #444;
+        font-size: 16px;
+        padding: 0 20px;
+        &.active{
+          color: #29B4F0;
+        }
+      }
+    }
+    .nav-menu-drop{
+      width: 100%;
+      display: none;
+      flex-direction: column;
+      padding: 0 20px;
+      .menu-item-drop{
+        color: #444;
+        font-size: 18px;
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        &.active{
+          color: #29B4F0;
+        }
+      }
+    }
+    .menu-btn{
+      display: none;
+      width: 35px;
+      height: 33px;
+      border-radius: 5px;
+      border: 1.5px solid #ccc;
+      /*display: flex;*/
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      padding: 5px 0;
+      cursor: pointer;
+      span{
+        width: 80%;
+        height: 2px;
+        background-color: #ccc;
+        border-radius: 5px;
+      }
+    }
   }
   .main{
     max-width: 980px;
-    padding: 70px 20px 50px;
+    padding: 80px 20px 50px;
     margin: 0 auto;
   }
   .clock{
@@ -158,5 +223,35 @@
   .button--grey:hover {
     color: #fff;
     background-color: #35495e;
+  }
+  @media screen and (max-width: 768px) {
+    .nav{
+      .nav-brand{
+        flex-grow: 1;
+      }
+      .nav-menu{
+        display: none;
+      }
+      .nav-menu-drop{
+        display: flex;
+      }
+      .menu-btn{
+        display: flex;
+      }
+    }
+  }
+  .expand-enter-active {
+     transition: all 0.3s ease;
+     overflow: hidden;
+    height: 150px;
+  }
+  .expand-leave-active{
+     transition: all 0.3s ease;
+     height: 0px;
+     overflow: hidden;
+  }
+  .expand-enter, .expand-leave {
+     height: 0;
+     opacity: 0;
   }
 </style>
