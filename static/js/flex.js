@@ -15,9 +15,11 @@
     var width = docEl.clientWidth;
     if (width / dpr > 750) {
       width = 750 * dpr;
+    } else {
+      width *= 1.5
     }
     // 乘以100，px : rem = 100 : 1
-    docEl.style.fontSize = 16 * (width / 750) * 1.5 + 'px';
+    docEl.style.fontSize = 16 * (width / 750) + 'px';
   };
   recalc ()
   if (!doc.addEventListener) return;
