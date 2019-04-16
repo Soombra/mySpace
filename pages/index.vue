@@ -51,6 +51,7 @@
 
 <script>
   import snow from '~/static/js/snow2'
+  import {isMobile} from "~/utils"
 
   let sliding = false
   let scrollTop = 0
@@ -128,8 +129,9 @@
     asyncData () {
     },
     mounted () {
-      console.log(this)
-      snow()
+      if (!isMobile()) {
+        snow()
+      }
       this.slideInit()
     },
     beforeDestroy () {
@@ -230,7 +232,8 @@
       line-height: 36px;
       position: relative;
       padding-left: 20px;
-      &:hover{
+
+      &:hover {
         background-color: rgba(255, 255, 255, 0.2);
       }
 
@@ -274,14 +277,16 @@
           font-weight: bold;
           margin-bottom: 20px;
         }
-        .contact{
-          .contact-icons{
+
+        .contact {
+          .contact-icons {
             height: 80px;
             max-width: 500px;
             margin: 50px auto;
             display: flex;
             justify-content: space-around;
-            div{
+
+            div {
               width: 50px;
               height: 50px;
               background-position: center;
@@ -289,18 +294,22 @@
               background-repeat: no-repeat;
               cursor: pointer;
             }
-            .icon-mail{
+
+            .icon-mail {
               background-image: url("../static/img/mail.png");
             }
-            .icon-wechat{
+
+            .icon-wechat {
               background-image: url("../static/img/wechat.png");
             }
           }
-          .contact-content{
+
+          .contact-content {
             display: flex;
             justify-content: center;
             height: 100px;
-            img{
+
+            img {
               width: 100px;
               height: 100px;
             }
