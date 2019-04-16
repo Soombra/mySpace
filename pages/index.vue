@@ -142,12 +142,15 @@
 
 <style lang="scss">
   #index-bg {
-    width: 100vw;
-    height: 100.1vh;
+    width: 100%;
+    height: 100.5vh;
     background-image: url('http://medias.wuerkang.com/bg.jpeg');
     background-size: cover;
     background-position: 0 0;
     transition: all 0.4s ease-out 0s;
+    #c{
+      width: 100%;
+    }
 
     &.slide-up {
       transform: translateY(-20vh);
@@ -252,7 +255,7 @@
   }
 
   .index-content {
-    width: 100vw;
+    width: 100%;
     position: absolute;
     top: 100vh;
     z-index: 150;
