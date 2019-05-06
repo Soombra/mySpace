@@ -102,11 +102,20 @@
     p{
       text-indent: 34px;
       font-size: 18px;
+      line-height: 28px;
       img{
         display: block;
         max-width: 100%;
         margin: 20px auto;
       }
+    }
+    blockquote{
+      background-color: #f7f7f7;
+      border-left: 6px solid #b4b4b4;
+      padding: 10px;
+      line-height: 24px;
+      margin-left: 20px;
+      margin-right: 0;
     }
   }
 }
