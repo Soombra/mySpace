@@ -1,10 +1,19 @@
 *{
   box-sizing: border-box;
   body{
-    background-color: #f9f9f9;
+    background-color: #fff;
     font-family: 'Source Sans Light', 'Apple LiSung Light', 'STHeiti Light', 'SimSun', sans-serif;
-    color: #69606b;
+    color: #2f2f2f;
     margin: 0;
+  }
+  .lists{
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  .main{
+    max-width: 980px;
+    padding: 80px 20px 50px;
+    margin: 0 auto !important;
   }
   .nuxt-link{
     color: #333;
@@ -90,7 +99,6 @@
     text-align: center;
   }
   .article-content{
-    color: #69606b;
     p{
       text-indent: 34px;
       font-size: 18px;

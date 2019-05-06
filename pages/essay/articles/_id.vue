@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h3 class="article-title">{{article.title}}</h3>
+  <div class="main">
+    <h1 class="article-title">{{article.title}}</h1>
     <div class="article-content" v-html="article.content"></div>
   </div>
 </template>

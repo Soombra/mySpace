@@ -20,9 +20,7 @@
         </ul>
       </transition>
     </nav>
-    <div class="main">
-      <nuxt/>
-    </div>
+    <nuxt/>
     <div class="clock" v-if="documentWidth > 1430">
       <clock></clock>
     </div>
@@ -71,7 +69,7 @@
       }
     },
     mounted () {
-      this.activeIndex = this.urlDict[$nuxt.$route.name]
+      this.activeIndex = this.urlDict[$nuxt.$route.path.split('/')[1]]
       this.documentWidth = document.body.clientWidth
       window.addEventListener('resize', (e) => {
          this.documentWidth = document.body.clientWidth
@@ -165,11 +163,6 @@
         border-radius: 5px;
       }
     }
-  }
-  .main{
-    max-width: 980px;
-    padding: 80px 20px 50px;
-    margin: 0 auto;
   }
   .clock{
     position: absolute;

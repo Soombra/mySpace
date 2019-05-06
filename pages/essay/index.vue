@@ -1,23 +1,25 @@
 <template>
   <div class="lists">
-    <div v-for="(item, index) in articles" class="list-item" :key="index">
-      <div class="list-item-left">
-        <nuxt-link class="list-item-title" :to="`/essay/articles/${item._id}`">{{item.title}}</nuxt-link>
-        <div class="list-item-info">作者：康哥&ensp;&ensp;日期：{{moment(item.date_published).format('YYYY-MM-DD HH:MM')}}</div>
-        <div class="list-item-abstract">{{item.abstract}}</div>
+    <div class="main">
+      <div v-for="(item, index) in articles" class="list-item" :key="index">
+        <div class="list-item-left">
+          <nuxt-link class="list-item-title" :to="`/essay/articles/${item._id}`">{{item.title}}</nuxt-link>
+          <div class="list-item-info">作者：康哥&ensp;&ensp;日期：{{moment(item.date_published).format('YYYY-MM-DD HH:MM')}}</div>
+          <div class="list-item-abstract">{{item.abstract}}</div>
+        </div>
+        <div class="list-item-right" v-if="item.image">
+          <img :src="item.image" alt="">
+        </div>
       </div>
-      <div class="list-item-right" v-if="item.image">
-        <img :src="item.image" alt="">
+      <div class="pagination-container" v-if="totalCount > 10">
+        <el-pagination
+            background
+            layout="prev, pager, next"
+            :page-size="10"
+            @current-change = 'pageChange'
+            :total="totalCount">
+        </el-pagination>
       </div>
-    </div>
-    <div class="pagination-container" v-if="totalCount > 10">
-      <el-pagination
-          background
-          layout="prev, pager, next"
-          :page-size="10"
-          @current-change = 'pageChange'
-          :total="totalCount">
-      </el-pagination>
     </div>
   </div>
 </template>
