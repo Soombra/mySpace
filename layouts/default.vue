@@ -51,7 +51,7 @@
         urlDict: {
           'front-end': 0,
           'travel': 1,
-          'my-life': 2
+          'essay': 2
         },
         showDrop: false
       }
