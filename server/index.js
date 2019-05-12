@@ -4,7 +4,7 @@ const { Nuxt, Builder } = require('nuxt')
 const app = express()
 const apis = require('./apis')
 const mongoose = require('mongoose');
-const url = "mongodb://localhost:12180/mySpace";
+const url = "mongodb://master:wu154236@localhost:12180/mySpace";
 
 // Import and Set Nuxt.js options
 let config = require('../nuxt.config.js')
