@@ -12,7 +12,8 @@ module.exports = {
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: pkg.description}
+      {hid: 'description', name: 'description', content: '康哥的个人博客，专注于前端技术沉淀，分享户外游记，记录生活点滴'},
+      {hid: 'keywords', name: 'keywords', content: '前端，户外，川藏线'}
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
