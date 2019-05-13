@@ -165,9 +165,9 @@
     }
   }
   .clock{
-    position: absolute;
+    position: fixed;
     right: 0px;
-    top: 40px;
+    top: 80px;
   }
   *,
   *:before,

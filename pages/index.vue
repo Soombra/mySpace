@@ -10,7 +10,7 @@
         </nuxt-link>
       </div>
       <div :class="['about-me', bgSlide ? 'fade-out' : 'fade-in']">
-        <p>下滑了解我</p>
+        <!--<p>下滑了解我</p>-->
         <div class="arrow"></div>
       </div>
     </div>
