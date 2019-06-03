@@ -1,5 +1,5 @@
 const mongoose = require ('mongoose')
-const {frontArticleModel, travelArticleModel, essayArticleModel} = require ('../models')
+const {frontArticleModel, travelArticleModel, essayArticleModel, footprintModel} = require ('../models')
 
 const controllers = {
   async queryFrontArticles (req, res, next) {
@@ -67,7 +67,16 @@ const controllers = {
       }
       res.send(article)
     })
-  }
+  },
+  async queryFootprints (req, res, next) {
+    try {
+      const footprints = await footprintModel.find ({}, 'name value date')
+      res.send(footprints)
+    } catch (e) {
+      console.log(e)
+      res.status(500).send('出了点错误')
+    }
+  },
 }
 
 module.exports = controllers

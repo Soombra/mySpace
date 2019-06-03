@@ -29,6 +29,8 @@
               <span class="tip">ps.如果你也玩守望先锋，我们可以成为朋友哦！</span>
             </div>
           </div>
+          <h2>足迹</h2>
+          <div id="map"></div>
           <h2>联系我</h2>
           <div class="contact">
             <div class="contact-icons">
@@ -50,8 +52,10 @@
 </template>
 
 <script>
+  import {home} from '~/apis'
   import snow from '~/static/js/snow2'
   import {isMobile} from "~/utils"
+  import moment from 'moment'
 
   let sliding = false
   let scrollTop = 0
@@ -65,9 +69,9 @@
         }, {
           text: '游记',
           url: '/travel'
-        }, {
-          text: '生活',
-          url: '/essay'
+          // }, {
+          //   text: '生活',
+          //   url: '/essay'
         }],
         showContent: false,
         goUp: false,
@@ -89,6 +93,9 @@
           this.showContent = true
           this.goUp = true
           this.bgSlide = true
+          this.$nextTick(() => {
+            this.mapInit()
+          })
           sliding = true
           setTimeout(() => {
             sliding = false
@@ -123,6 +130,45 @@
           }
           scrollTop = scrollHeight
         }
+      },
+      mapInit () {
+        var myChart = echarts.init(document.getElementById('map'));
+        home.queryFootprints().then(({data}) => {
+          var option = {
+            tooltip: {
+              trigger: 'item',
+              formatter (data) {
+                return `${data.name} <br/> ${moment(data.date).format('YYYY.MM.DD')}`
+              },
+            },
+            geo: {
+              id: 'map1',
+              map: 'china',
+              label: {
+                emphasis: {
+                  show: false
+                }
+              },
+              itemStyle: {
+                normal: {
+                  areaColor: '#ccc',
+                  borderColor: '#888'
+                },
+                emphasis: {
+                  areaColor: '#ccc'
+                }
+              }
+            },
+            series: [{
+              name: '地址',
+              type: 'scatter',
+              coordinateSystem: 'geo',
+              data: data,
+              symbolSize: 8,
+            }]
+          }
+          myChart.setOption(option)
+        }).catch(err => {console.log(err)})
       }
     },
     layout: 'home',
@@ -133,9 +179,6 @@
         snow()
       }
       this.slideInit()
-    },
-    beforeDestroy () {
-
     }
   }
 </script>
@@ -148,7 +191,8 @@
     background-size: cover;
     background-position: 0 0;
     transition: all 0.4s ease-out 0s;
-    #c{
+
+    #c {
       width: 100%;
     }
 
@@ -415,6 +459,12 @@
     }
   }
 
+  #map {
+    width: 80%;
+    height: 600px;
+    margin: 0 auto;
+  }
+
   @media screen and (max-width: 768px) {
     .my-info {
       flex-direction: column;
@@ -424,6 +474,9 @@
         height: auto;
         margin-bottom: 20px;
       }
+    }
+    #map {
+      height: 300px;
     }
   }
 </style>

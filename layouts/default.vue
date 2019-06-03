@@ -44,9 +44,9 @@
         },{
           text: '游记',
           url: '/travel'
-        },{
-          text: '生活',
-          url: '/essay'
+        // },{
+        //   text: '生活',
+        //   url: '/essay'
         }],
         urlDict: {
           'front-end': 0,

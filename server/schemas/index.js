@@ -14,7 +14,13 @@ const articleSchema = mongoose.Schema({
     default: 'draft'
   }
 })
+const footprintSchema = mongoose.Schema({
+  name: String,
+  date: Date,
+  value: Array,
+}, {timestamps: { createdAt: 'date_created', updatedAt: 'date_updated' }})
 
 module.exports = {
-  articleSchema
+  articleSchema,
+  footprintSchema
 }

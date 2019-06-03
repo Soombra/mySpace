@@ -6,6 +6,7 @@ function apis (app) {
   app.get ('/travel/article/:id', controllers.travelArticleDetails)
   app.get ('/essay/articles', controllers.queryEssayArticles)
   app.get ('/essay/article/:id', controllers.essayArticleDetails)
+  app.get ('/footprints', controllers.queryFootprints)
 }
 
 module.exports = apis

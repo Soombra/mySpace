@@ -24,9 +24,15 @@ export const essay = {
     return request.get(`/essay/article/${id}`)
   }
 }
+export const home = {
+  queryFootprints (params) {
+    return request.get('/footprints', {params})
+  },
+}
 
 export default {
   frontEnd,
   travel,
-  essay
+  essay,
+  home
 }

@@ -1,5 +1,4 @@
 export default function () {
-  console.log('准备好了')
   // Customize these...
   var n = 999,
     speed = 3,

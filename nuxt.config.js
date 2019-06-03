@@ -19,9 +19,10 @@ module.exports = {
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
     ],
     script: [
-      {src: 'https://code.jquery.com/jquery-3.3.1.slim.min.js'},
       {src: '/js/flex.js'},
-      {src: '/js/snow1.js'}
+      {src: '/js/snow1.js'},
+      {src: '/js/echarts.min.js'},
+      {src: '/js/china.js'}
     ]
   },
 
