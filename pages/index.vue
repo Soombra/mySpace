@@ -134,7 +134,6 @@
       mapInit () {
         var myChart = echarts.init(document.getElementById('map'));
         home.queryFootprints().then(({data}) => {
-          console.log('请求成功',data)
           var option = {
             tooltip: {
               trigger: 'item',
@@ -167,7 +166,6 @@
               symbolSize: 8,
             }]
           }
-          console.log('打印option',option)
           myChart.setOption(option)
         }).catch(err => {console.log(err)})
       }
