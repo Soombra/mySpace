@@ -163,7 +163,10 @@
               name: '地址',
               type: 'scatter',
               coordinateSystem: 'geo',
-              data: data,
+              data: [{
+                name: 'test',
+                value: [91.12082391546393, 29.65004027476773]
+              }],
               symbolSize: 8,
             }]
           }
