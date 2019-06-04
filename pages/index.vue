@@ -165,7 +165,7 @@
               coordinateSystem: 'geo',
               data: [{
                 name: 'test',
-                value: [38.976198, 113.595708]
+                value: [91.12082391546393, 29.65004027476773]
               }],
               symbolSize: 8,
             }]
