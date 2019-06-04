@@ -21,8 +21,8 @@ module.exports = {
     script: [
       {src: '/js/flex.js'},
       {src: '/js/snow1.js'},
-      // {src: '/js/echarts.min.js'},
-      {src: 'https://cdnjs.cloudflare.com/ajax/libs/echarts/3.2.0/echarts.js'},
+      {src: '/js/echarts.min.js'},
+      // {src: 'https://cdnjs.cloudflare.com/ajax/libs/echarts/3.2.0/echarts.js'},
       {src: '/js/china.js'}
     ]
   },
