@@ -143,7 +143,6 @@
               },
             },
             geo: {
-              id: 'map1',
               map: 'china',
               label: {
                 emphasis: {
@@ -164,7 +163,10 @@
               name: '地址',
               type: 'scatter',
               coordinateSystem: 'geo',
-              data: data,
+              data: [{
+                name: 'test',
+                value: [38.976198, 113.595708]
+              }],
               symbolSize: 8,
             }]
           }
