@@ -148,6 +148,11 @@
                   show: false
                 }
               },
+              roam: true,
+              scaleLimit: {
+                min: 1,
+                max: 3
+              },
               itemStyle: {
                 normal: {
                   areaColor: '#ccc',

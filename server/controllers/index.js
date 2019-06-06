@@ -70,7 +70,7 @@ const controllers = {
   },
   async queryFootprints (req, res, next) {
     try {
-      const footprints = await footprintModel.find ({}, 'name value')
+      const footprints = await footprintModel.find ({}, 'name value date')
       res.send(footprints)
     } catch (e) {
       console.log(e)
