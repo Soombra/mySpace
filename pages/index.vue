@@ -134,10 +134,11 @@
       mapInit () {
         var myChart = echarts.init(document.getElementById('map'));
         home.queryFootprints().then(({data}) => {
+          console.log(data)
           var option = {
             tooltip: {
               trigger: 'item',
-              formatter (data) {
+              formatter ({data}) {
                 return `${data.name} <br/> ${moment(data.date).format('YYYY.MM.DD')}`
               },
             },
@@ -171,6 +172,7 @@
               symbolSize: 8,
             }]
           }
+          console.log(option)
           myChart.setOption(option)
         }).catch(err => {console.log(err)})
       }
