@@ -7,7 +7,7 @@
   import numbers from './numbers'
 
   const config = {
-    colors: ["#33B5E5", "#0099cc", "#aa66cc", "#9933cc", "#99cc00", "#669900", "#ffbb33", "ff8800", "ff4444", "#cc0000"],
+    colors: ["#33B5E5", "#0099cc", "#aa66cc", "#9933cc", "#99cc00", "#669900", "#ffbb33", "#ff8800", "#ff4444", "#cc0000"],
     width: 230,
     height: 100,
     r: 1.5,
