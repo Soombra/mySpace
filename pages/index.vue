@@ -46,8 +46,8 @@
           </div>
         </div>
       </div>
+      <p class="footer">京ICP备19012712号</p>
     </div>
-
   </div>
 </template>
 
@@ -369,6 +369,15 @@
           }
         }
       }
+    }
+    .footer{
+      font-size: 14px;
+      height: 50px;
+      background-color: #ccc;
+      margin-bottom: 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 
