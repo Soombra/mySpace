@@ -13,6 +13,9 @@
         <!--<p>下滑了解我</p>-->
         <div class="arrow"></div>
       </div>
+      <div class="record">
+        <a target="_blank" href="https://beian.miit.gov.cn">京ICP备19012712号</a>
+      </div>
     </div>
     <div id="content" :class="['index-content', goUp ? 'slide-up' : 'slide-down']" v-if="showContent">
       <div class="content-head-cover"></div>
@@ -197,7 +200,6 @@
     background-size: cover;
     background-position: 0 0;
     transition: all 0.4s ease-out 0s;
-
     #c {
       width: 100%;
     }
@@ -248,6 +250,16 @@
           left: -2px;
           transform: rotate(-45deg);
         }
+      }
+    }
+    .record{
+      text-align: center;
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      a{
+        color: #fff;
+        text-decoration: none;
       }
     }
   }
