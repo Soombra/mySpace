@@ -20,7 +20,7 @@
     "element-ui": "^2.7.2",
     "express": "^4.16.4",
     "graceful-fs": "^4.1.15",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "jsonwebtoken": "^8.5.0",
     "moment": "^2.24.0",
     "mongoose": "^5.4.13",
