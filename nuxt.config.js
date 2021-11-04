@@ -51,11 +51,11 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    postcss: [
-      require ('postcss-px2rem') ({
-        remUnit: 16
-      })
-    ],
+    postcss: {
+      plugins: {
+        'postcss-px2rem' : {remUnit: 16}
+        }
+    },
     /*
     ** You can extend webpack config here
     */
