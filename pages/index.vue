@@ -49,7 +49,7 @@
           </div>
         </div>
       </div>
-      <p class="footer">京ICP备19012712号</p>
+      <p class="footer"><a target="_blank" href="https://beian.miit.gov.cn">京ICP备19012712号</a></p>
     </div>
   </div>
 </template>
@@ -84,7 +84,7 @@
     },
     head () {
       return {
-        title: '康哥的个人空间',
+        title: '康哥的生活分享',
         meta: [
           {hid: 'keywords', name: 'keywords', content: '技术分享,户外游记,生活随笔'}
         ]
