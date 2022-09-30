@@ -1,0 +1,23 @@
+{
+  "entry": "server.js",
+  "files": {
+    "pages/essay/articles/_id.js": "pages/essay/articles/_id.js",
+    "pages/essay/index.js": "pages/essay/index.js",
+    "pages/front-end/articles/_id.js": "pages/front-end/articles/_id.js",
+    "pages/front-end/index.js": "pages/front-end/index.js",
+    "pages/index.js": "pages/index.js",
+    "pages/travel/articles/_id.js": "pages/travel/articles/_id.js",
+    "pages/travel/index.js": "pages/travel/index.js",
+    "server.js": "server.js"
+  },
+  "maps": {
+    "pages/essay/articles/_id.js": "pages/essay/articles/_id.js.map",
+    "pages/essay/index.js": "pages/essay/index.js.map",
+    "pages/front-end/articles/_id.js": "pages/front-end/articles/_id.js.map",
+    "pages/front-end/index.js": "pages/front-end/index.js.map",
+    "pages/index.js": "pages/index.js.map",
+    "pages/travel/articles/_id.js": "pages/travel/articles/_id.js.map",
+    "pages/travel/index.js": "pages/travel/index.js.map",
+    "server.js": "server.js.map"
+  }
+}

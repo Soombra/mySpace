@@ -1,0 +1,51 @@
+[
+  {
+    "name": "essay",
+    "path": "/essay",
+    "component": "/Users/bytedance/Desktop/personal/mySpace/pages/essay/index.vue",
+    "chunkName": "pages/essay/index",
+    "_name": "_4c4c0dc0"
+  },
+  {
+    "name": "front-end",
+    "path": "/front-end",
+    "component": "/Users/bytedance/Desktop/personal/mySpace/pages/front-end/index.vue",
+    "chunkName": "pages/front-end/index",
+    "_name": "_1b71600c"
+  },
+  {
+    "name": "travel",
+    "path": "/travel",
+    "component": "/Users/bytedance/Desktop/personal/mySpace/pages/travel/index.vue",
+    "chunkName": "pages/travel/index",
+    "_name": "_2a1d044d"
+  },
+  {
+    "name": "essay-articles-id",
+    "path": "/essay/articles/:id?",
+    "component": "/Users/bytedance/Desktop/personal/mySpace/pages/essay/articles/_id.vue",
+    "chunkName": "pages/essay/articles/_id",
+    "_name": "_e37dfd2c"
+  },
+  {
+    "name": "front-end-articles-id",
+    "path": "/front-end/articles/:id",
+    "component": "/Users/bytedance/Desktop/personal/mySpace/pages/front-end/articles/_id.vue",
+    "chunkName": "pages/front-end/articles/_id",
+    "_name": "_4308ac20"
+  },
+  {
+    "name": "travel-articles-id",
+    "path": "/travel/articles/:id?",
+    "component": "/Users/bytedance/Desktop/personal/mySpace/pages/travel/articles/_id.vue",
+    "chunkName": "pages/travel/articles/_id",
+    "_name": "_1e95023d"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/bytedance/Desktop/personal/mySpace/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_0a84a6d2"
+  }
+]
